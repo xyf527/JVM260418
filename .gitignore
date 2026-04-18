@@ -1,39 +1,165 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-.kotlin
-
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
+# ============================================
+# IntelliJ IDEA 相关文件
+# ============================================
+/.idea/**
 *.iml
+*.iws
 *.ipr
+out/
+*.ipr
+*.iws
 
-### Eclipse ###
-.apt_generated
+# 插件相关
+!.idea/codeStyles/
+!.idea/inspectionProfiles/
+
+# ============================================
+# Maven 构建文件
+# ============================================
+target/
+**/target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+.mvn/wrapper/maven-wrapper.properties
+
+# ============================================
+# Maven Archetype 相关（用户指定）
+# ============================================
+**/archetype-resources/
+**/src/main/resources/archetype-resources/
+**/src/test/resources/archetype-resources/
+
+# ============================================
+# Maven 元数据目录（用户指定）
+# ============================================
+**/META-INF/maven/
+META-INF/maven/
+
+# 保留必要的 META-INF 内容
+!src/main/resources/META-INF/
+!src/main/resources/META-INF/spring.factories
+!src/main/resources/META-INF/spring/
+!src/main/resources/META-INF/services/
+
+# ============================================
+# 系统文件
+# ============================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# ============================================
+# 编译输出和临时文件
+# ============================================
+*.class
+*.log
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+*.tmp
+*.bak
+*.swp
+*.swo
+
+# 打包文件
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# ============================================
+# 日志文件
+# ============================================
+logs/
+*.log
+log/
+**/log/
+**/logs/
+
+# ============================================
+# 环境配置和敏感信息
+# ============================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.keystore
+*.key
+*.cert
+*.p12
+
+# ============================================
+# 操作系统特定文件
+# ============================================
+# Windows
+[Tt]humbs.db
+$RECYCLE.BIN/
+
+# Linux
+*~
+
+# Mac
+.AppleDouble
+.LSOverride
+
+# ============================================
+# 测试相关
+# ============================================
+**/test-output/
+**/test-results/
+**/surefire-reports/
+**/failsafe-reports/
+**/jacoco.exec
+
+# ============================================
+# IDE 和编辑器
+# ============================================
+# VS Code
+.vscode/
+
+# Eclipse
 .classpath
-.factorypath
 .project
-.settings
-.springBeans
-.sts4-cache
+.settings/
+bin/
 
-### NetBeans ###
+# NetBeans
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
 /.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
 
-### VS Code ###
-.vscode/
+# ============================================
+# 其他
+# ============================================
+# 临时文件
+*.tmp
+*.temp
 
-### Mac OS ###
-.DS_Store
+# 备份文件
+*.bak
+*.backup
+
+# 覆盖率报告
+*.gcda
+*.gcno%
