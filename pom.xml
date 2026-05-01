@@ -12,6 +12,7 @@
     <modules>
         <module>chapter01_bytecode</module>
         <module>chapter03_runtimearea</module>
+        <module>chapter04_object</module>
     </modules>
 
     <properties>
