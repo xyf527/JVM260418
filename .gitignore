@@ -163,3 +163,4 @@ bin/
 # 覆盖率报告
 *.gcda
 *.gcno%
+/chapter06_gc/${project.build.directory}/
