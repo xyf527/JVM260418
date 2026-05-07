@@ -78,7 +78,22 @@ public class MemoryTestController {
 
     /*
     性能优化案例三 合理配置堆内存
+     -XX:+PrintGCDetails -XX:MetaspaceSize=60m -Xss640k
+     -XX:+HeapDumpOnOutOfMemoryError -XX:HeapDumpPath=heap/heapdump3.hprof
+     -XX:SurvivorRatio=8 -XX:+PrintGCDateStamps -Xms1024M -Xmx1024M -Xloggc:log/gc-oom3.log
 
+     jmap -histo:live 32369 将当前的存货对象dump到文件 此时会出发FullGC
+
+    估算GC的频率
+    正常情况我们应该根据系统进行一个内存的估算 这个我们可以在测试环境中测试 最开始可以将内存设置的大一些 比如4G这样 当然
+    也可以根据业务系统估算来的
+
+    比如从数据库获取一条数据占用128个字节 需要获取1000条数据 那么一次读取到内存的大小就是(128b / 1024kb / 1024m) * 1000 = 0.122m
+    那么我们程序可能需要并发读取 比如美妙读取100次 那么内存占用就是0.122m * 100 = 12.2m 如果堆内存设置1G 那么年轻代大小
+    大约333m 那么333m * 80% / 12.2m = 21.84s 也就是说程序每分钟两三次YoungGC 这样可以让我们对系统有一个大致的估算
+    0.122 * 100 = 12.2m/s  --Eden Area
+    1024m * 1/3 * 80% = 273m
+    273 / 12.2m = 22.38s  -->  YoungGC每分钟2-3次
      */
     @RequestMapping("/getData")
     public List<People> getProduct() {
